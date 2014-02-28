@@ -1,8 +1,4 @@
-angular.module('address', ['inputs'])
-  .controller('AddressCtrl', ['$scope', 'inputsService', function (scope, inputsService) {
-    inputsService.map("value", scope);
-    scope.value = "test";
-    
-    scope.alert = function(msg) { alert(inputsService.get('value'))}
-     
+angular.module('Address', ['Inputs'])
+  .controller('AddressCtrl', ['$scope', 'InputsService', function (scope, inputsService) {
+    inputsService.bind("", ["value"], scope);
   }]);

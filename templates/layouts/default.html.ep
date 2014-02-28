@@ -1,7 +1,7 @@
 <html ng-app="web_uiApp">
   <head>
     <title><%= title %></title>
-    <script type="text/javascript" src="/script/angular.min.js"></script>
+    <script type="text/javascript" src="/script/lib/angular.min.js"></script>
     <script type="text/javascript" src="/script/input.js"></script>
     <script type="text/javascript" src="/script/address.js"></script>
     <script type="text/javascript" src="/script/web_ui.js"></script>
