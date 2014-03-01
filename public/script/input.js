@@ -1,7 +1,8 @@
 angular.module("Inputs", [])
-.factory("InputsService", ['$http', 'Config', function($http, config) {
+.factory("InputsService",['$http', 'Config', function(http, config) {
    this.url = config.url;
    this.__inputs__ = {};
+   
    var self = this;
 //   
 //   this.getInput = function (namespace, name) {
@@ -43,17 +44,17 @@ angular.module("Inputs", [])
 
 function Input() {
   
-  this.value         = null;
-  this.namespace     = null;
-  this.class_name    = null;
-  this.errors        = [];
-  this.warnings      = [];
-  this.notices       = [];
-  this.is_required   = false;
-  this.name          = null;
-  this.is_dirty      = false;
-  this.default_value = null;
-  this.possible_values = [];
+  this.value            = null;
+  this.namespace        = null;
+  this.parent_type_name = null;
+  this.errors           = [];
+  this.warnings         = [];
+  this.notices          = [];
+  this.is_required      = false;
+  this.name             = null;
+  this.is_dirty         = false;
+  this.default_value    = null;
+  this.possible_values  = [];
   
   this.equals = function(other) {
     if(typeof this !== typeof other) return false;

@@ -1,11 +1,25 @@
+'use strict';
+
 describe("Inputs mapping ", function () {
-  beforeEach(module("Inputs"));
+  var InputsService;
+  var serviceName = 'InputsService';
   
   describe("Loads", function () {
-    var config  = {url: "test"}; 
-    it("binds properties to the inputs service", inject(function($httpBackend, config, InputsService) {
-      
-      
-    }));
+    var config  = {url: "test"};
+    
+    
+    beforeEach(function() {
+      module('Inputs');
+      module(function($provide) {
+        $provide.value('Config', config);
+        $provide.value('$http', {});
+      });
+    });
+    
+    it("binds properties to the inputs service", inject(function(_InputsService_) {
+       InputsService=_InputsService_;
+       expect(angular.isFunction(InputsService.bind)).toBe(true);
+     }) 
+    );
   });
 });
